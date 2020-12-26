@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>了解Git | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="了解Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解Git">
+<meta property="og:url" content="http://example.com/2020/12/26/%E4%BA%86%E8%A7%A3Git/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="了解Git">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-26T15:30:34.000Z">
+<meta property="article:modified_time" content="2020-12-26T15:34:17.239Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,16 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-了解Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-了解Git" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/26/%E4%BA%86%E8%A7%A3Git/">了解Git</a>
+    <h1 class="article-title" itemprop="name">
+      了解Git
     </h1>
   
 
@@ -172,12 +174,110 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="了解Git"><a href="#了解Git" class="headerlink" title="了解Git"></a>了解Git</h2>
-        
-          <a class="article-more-a" href="/2020/12/26/%E4%BA%86%E8%A7%A3Git/#more">more >></a>
-        
+        <h2 id="了解Git"><a href="#了解Git" class="headerlink" title="了解Git"></a>了解Git</h2><a id="more"></a>
+
+<h3 id="一、基本操作"><a href="#一、基本操作" class="headerlink" title="一、基本操作"></a>一、基本操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init </span><br></pre></td></tr></table></figure>
+
+<p>在文件夹中生成一个.git的隐藏文件,它所在的文件夹就是仓库，用于记录所有变更行为。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>查看当前仓库的信息状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &quot;filename&quot;    git reset &quot;filename&quot;</span><br></pre></td></tr></table></figure>
+
+<p>将单个文件加入暂存区  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<p>将文件批量加入暂存区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;xxxxx&quot;</span><br></pre></td></tr></table></figure>
+
+<p>m 是 message 的意思，后面跟上对这次提交的一些描述</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+
+<p>查看日志。可以看到什么人在什么时间提交了一个commit。每一个commit会生成一个hash值。</p>
+<ul>
+<li>当对某些文件进行了变更时，需要使用<code>git add</code>将文件加入暂存区，在使用<code>git commit</code>提交这一次的变更到仓库。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch         git merge &quot;name&quot;</span><br></pre></td></tr></table></figure>
+
+<p>列出所有本地分支 / 合并分支的<strong>变更</strong>。将该分支与当前分支合并</p>
+<p>初始化仓库时自动生成默认分支 master。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &quot;name&quot; (origin) &quot;template&quot;</span><br></pre></td></tr></table></figure>
+
+<p>创建新的分支名为name，以template分支/commit为模板（不填则以当前分支为模板）。</p>
+<p>新的分支会与模板分支的commit历史保持一致。</p>
+<p>template不是来自本地时，需要加上origin。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &quot;branchname&quot;</span><br></pre></td></tr></table></figure>
+
+<p>切换分支。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase</span><br></pre></td></tr></table></figure>
+
+<p>变基。</p>
+<p>举个栗子：</p>
+<p>在master分支完成两次commit(1,2)，切出bc分支，在bc分支完成两次commit(3,4)，回到master分支，完成1次commit(5)。</p>
+<p>master分支 1-&gt;2-&gt;5 ;  bc分支 1-&gt;2-&gt;3-&gt;4</p>
+<p>使用<code>rebase</code>就能合并为1-&gt;2-&gt;5-&gt;3-&gt;4。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote </span><br></pre></td></tr></table></figure>
+
+<p>用于远程仓库（作为中央仓库管理所有分支）的操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone</span><br></pre></td></tr></table></figure>
+
+<p>远程仓库下载至本地。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></table></figure>
+
+<p>拉取远端仓库信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push    git pull</span><br></pre></td></tr></table></figure>
+
+<p>上传/下载远程代码并合并。</p>
+<p><code>git pull</code> == 先<code>fetch</code>再自动<code>merge</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream origin &quot;branchname&quot;</span><br></pre></td></tr></table></figure>
+
+<p>将远程仓库的分支作为本地分支的上流分支。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset &quot;commitID&quot;  --hard</span><br></pre></td></tr></table></figure>
+
+<p>回退版本（到当时提交的状态）。</p>
+<p>reset的模式 : </p>
+<ul>
+<li>–hard : 不保存当前所有变更</li>
+<li>–soft : 保留变更且变更内容出入staged</li>
+<li>mixed : 保留变更且变更内容处于modified （不带参数时，默认状态）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>查看所有操作记录</p>
+<h3 id="二、文件状态"><a href="#二、文件状态" class="headerlink" title="二、文件状态"></a>二、文件状态</h3><p>文件一共有四种状态： <strong>untracked、unmodified、modified、staged。</strong></p>
+<ul>
+<li><p>当我们新建了一个文件时，它处于untracked状态，使用<code>git add</code>之后便是staged状态，之后再<code>git commit</code>之后，文件就变成了unmodified状态。同样还是这个文件，如果将它再次修改，它就变成了modified。</p>
+</li>
+<li><p>换句话说，使用<code>git commit</code>之前，要保证文件都进入staged，那么在staged之前，如果这个文件是新建的，那么commit之前就是untracked，如果该文件有过commit记录，那么commit之前它是modified。</p>
+</li>
+</ul>
+<h3 id="三、alias（别名）"><a href="#三、alias（别名）" class="headerlink" title="三、alias（别名）"></a>三、alias（别名）</h3><p>可自定义命令的写法。</p>
+<p>设置alias：在git安装目录下找到gitconfig文件，可以设置自己的alias。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[alias]</span><br><span class="line">	ad &#x3D; add .</span><br><span class="line">	st &#x3D; status</span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -186,16 +286,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/26/%E4%BA%86%E8%A7%A3Git/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/26/%E4%BA%86%E8%A7%A3Git/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/30/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">代理模式;</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -215,347 +374,14 @@
 
 
 
-
   
-    <article id="post-代理模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/30/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">代理模式;</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/30/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-11-30T15:21:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><h3 id="1-为什么要学习代理模式？"><a href="#1-为什么要学习代理模式？" class="headerlink" title="1.为什么要学习代理模式？"></a>1.为什么要学习代理模式？</h3><p>因为它是SpringAOP的底层！【SpringAOP 和 SpringMVC】</p>
-<p><img src="C:\Users\86137\AppData\Roaming\Typora\typora-user-images\image-20201130175954816.png" alt="image-20201130175954816"></p>
-        
-          <a class="article-more-a" href="/2020/11/30/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/30/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-XML学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/25/XML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">XML学习笔记</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/25/XML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-11-25T14:53:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h1><h3 id="1-为什么需要XML？"><a href="#1-为什么需要XML？" class="headerlink" title="1.为什么需要XML？"></a>1.为什么需要XML？</h3><p><strong>单独的数据</strong>含义很模糊，例如 20 ，它代表的是年龄还是成绩，又或是其他。XML用于传输数据，级<strong>数据+含义</strong>，而不是单独的显示数据（HTML）</p>
-        
-          <a class="article-more-a" href="/2020/11/25/XML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/25/XML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构与算法——八大排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F/">数据结构与算法——八大排序</a>
-    </h1>
   
 
-        
-        <a href="/2020/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2020-11-05T08:58:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="数据结构与算法——八大排序"><a href="#数据结构与算法——八大排序" class="headerlink" title="数据结构与算法——八大排序"></a>数据结构与算法——八大排序</h1><p><strong>排序是指对数据元素建立某种有序排列的过程。在计算机软件系统设计中，排序占有相当重要的地位。</strong></p>
-<p>本文将介绍排序经典的 **八 大 排 序 **算法，快来康康吧！</p>
-        
-          <a class="article-more-a" href="/2020/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E2%80%94%E2%80%94%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-栈的相关操作及应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/05/%E6%A0%88%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BA%94%E7%94%A8/">栈的相关操作及应用</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/05/%E6%A0%88%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-10-05T05:58:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="栈的定义"><a href="#栈的定义" class="headerlink" title="栈的定义"></a>栈的定义</h3><p><strong>栈（stack）：限定在表尾（栈顶）进行插入和删除操作的线性表</strong><br>栈底是固定的。最先进栈的只能在栈底。</p>
-<p>简单来说就是：<strong>后进先出</strong></p>
-<p><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1170791744,651353658&fm=26&gp=0.jpg" alt="点击查看源网页"></p>
-        
-          <a class="article-more-a" href="/2020/10/05/%E6%A0%88%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BA%94%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/05/%E6%A0%88%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E5%8F%8A%E5%BA%94%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/05/hello-world/" class="archive-article-date">
-  	<time datetime="2020-10-05T03:33:51.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/05/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -578,8 +404,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
